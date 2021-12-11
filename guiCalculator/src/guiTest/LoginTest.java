@@ -1,7 +1,6 @@
-package gui;
+package guiTest;
 
 import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -11,8 +10,10 @@ import javax.swing.JPanel;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 
+@SuppressWarnings("serial")
 public class LoginTest extends JFrame {
 	
+	@SuppressWarnings("deprecation")
 	public LoginTest() {
 		JPanel panel = new JPanel();
 		JLabel labelID = new JLabel("ID :");

@@ -1,14 +1,15 @@
 package gui.calculator;
 
-import java.awt.EventQueue;
-
-import javax.swing.JFrame;
 import java.awt.BorderLayout;
-import javax.swing.JLabel;
-import javax.swing.JLayeredPane;
 import java.awt.Button;
 import java.awt.Color;
 import java.awt.Font;
+import java.net.URL;
+
+import javax.swing.ImageIcon;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JLayeredPane;
 import javax.swing.SwingConstants;
 
 public class CalculatorGUI {
@@ -38,7 +39,7 @@ public class CalculatorGUI {
 	public static Button btn_eq;
 
 	private JLayeredPane layeredPane;
-	public static JFrame frame;
+	public JFrame frame;
 	
 	/**
 	 * Create the application.
@@ -51,12 +52,18 @@ public class CalculatorGUI {
 	 * Initialize the contents of the frame.
 	 */
 	private void initialize() {
+		URL imageURL = CalculatorGUI.class.getClassLoader().getResource("calculator.png");
+		ImageIcon img = new ImageIcon(imageURL);
+		
 		frame = new JFrame();
 		frame.setBackground(new Color (128,128,128));
 		frame.setBounds(100, 100, 365, 526);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setResizable(false);
 		frame.getContentPane().setLayout(new BorderLayout(0, 0));
+		
+		frame.setTitle("Calculator");
+		frame.setIconImage(img.getImage());
 		
 		layeredPane = new JLayeredPane();
 		layeredPane.setForeground(new Color(128, 128, 128));
